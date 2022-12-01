@@ -1,24 +1,15 @@
 from dash import dcc
 from dash import html
-from dash.dependencies import Output, Input, State
 import dash
-from urllib.request import urlopen
-import json
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import dash_daq as daq
-import io
-import requests
-import json
-import os
 from datetime import date
 from datetime import datetime
 from datetime import timedelta
-import country_converter as coco
 
-
-import utils
+from ml_utils import utils
 
 diet_data_path = './data/Food_Supply_kcal_Data.csv'
 activity_data_path = './data/Food_Supply_kcal_Data.csv'

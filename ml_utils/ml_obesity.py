@@ -15,10 +15,10 @@ from pathlib import Path
 
 from matplotlib import pyplot as plt
 
-data_path = './data/Food_Supply_kcal_Data.csv'
+data_path = '../data/Food_Supply_kcal_Data.csv'
 train = pd.read_csv(data_path)
 
-target = 'Confirmed'
+target = 'Obesity'
 
 if "Set" not in train.columns:
     train["Set"] = np.random.choice(["train", "valid"], p =[.9, .1], size=(train.shape[0],))
@@ -88,7 +88,7 @@ valid_rmse = clf.history.history['valid_rmse']
 
 
 # save tabnet model
-saving_path_name = "./tabnet_models/tabnet_model_covid"
+saving_path_name = "./tabnet_models/tabnet_model_obesity"
 saved_filepath = clf.save_model(saving_path_name)
 
 # define new model with basic parameters and load state dict weights
@@ -109,69 +109,69 @@ ax.plot(loss, 'g-')
 ax.set_xlabel('Epoch')
 ax.set_ylabel('Loss')
 ax.grid()
-ax.set_title('TabNet Train Loss vs Epoch - COVID')
-fig.savefig('./plots/loss_covid.png')
+ax.set_title('TabNet Train Loss vs Epoch - Obesity')
+fig.savefig('./plots/loss_obesity.png')
 
 fig, ax = plt.subplots()
 ax.plot(train_rmsle, 'g-')
 ax.set_xlabel('Epoch')
 ax.set_ylabel('RMSLE')
 ax.grid()
-ax.set_title('Train Root Mean Squared Logarithmic Error vs Epoch - COVID')
-fig.savefig('./plots/train_rmsle_covid.png')
+ax.set_title('Train Root Mean Squared Logarithmic Error vs Epoch - Obesity')
+fig.savefig('./plots/train_rmsle_obesity.png')
 
 fig, ax = plt.subplots()
 ax.plot(valid_rmsle, 'b-')
 ax.set_xlabel('Epoch')
 ax.set_ylabel('RMSLE')
 ax.grid()
-ax.set_title('Test Root Mean Squared Logarithmic Error vs Epoch - COVID')
-fig.savefig('./plots/valid_rmsle_covid.png')
+ax.set_title('Test Root Mean Squared Logarithmic Error vs Epoch - Obesity')
+fig.savefig('./plots/valid_rmsle_obesity.png')
 
 fig, ax = plt.subplots()
 ax.plot(train_mae, 'g-')
 ax.set_xlabel('Epoch')
 ax.set_ylabel('MAE')
 ax.grid()
-ax.set_title('Train Mean Absolute Error vs Epoch - COVID')
-fig.savefig('./plots/train_mae_covid.png')
+ax.set_title('Train Mean Absolute Error vs Epoch - Obesity')
+fig.savefig('./plots/train_mae_obesity.png')
 
 fig, ax = plt.subplots()
 ax.plot(valid_mae, 'b-')
 ax.set_xlabel('Epoch')
 ax.set_ylabel('MAE')
 ax.grid()
-ax.set_title('Test Mean Absolute Error vs Epoch - COVID')
-fig.savefig('./plots/valid_mae_covid.png')
+ax.set_title('Test Mean Absolute Error vs Epoch - Obesity')
+fig.savefig('./plots/valid_mae_obesity.png')
 
 fig, ax = plt.subplots()
 ax.plot(train_mse, 'g-')
 ax.set_xlabel('Epoch')
 ax.set_ylabel('MSE')
 ax.grid()
-ax.set_title('Train Mean Square Error vs Epoch - COVID')
-fig.savefig('./plots/train_mse_covid.png')
+ax.set_title('Train Mean Square Error vs Epoch - Obesity')
+fig.savefig('./plots/train_mse_obesity.png')
 
 fig, ax = plt.subplots()
 ax.plot(valid_mse, 'b-')
 ax.set_xlabel('Epoch')
 ax.set_ylabel('MSE')
 ax.grid()
-ax.set_title('Test Mean Square Error vs Epoch - COVID')
-fig.savefig('./plots/valid_mse_covid.png')
+ax.set_title('Test Mean Square Error vs Epoch - Obesity')
+fig.savefig('./plots/valid_mse_obesity.png')
 
 fig, ax = plt.subplots()
 ax.plot(train_rmse, 'g-')
 ax.set_xlabel('Epoch')
 ax.set_ylabel('RMSE')
 ax.grid()
-ax.set_title('Train Root Mean Square Error vs Epoch - COVID')
-fig.savefig('./plots/train_rmse_covid.png')
+ax.set_title('Train Root Mean Square Error vs Epoch - Obesity')
+fig.savefig('./plots/train_rmse_obesity.png')
 
 fig, ax = plt.subplots()
 ax.plot(valid_rmse, 'b-')
 ax.set_xlabel('Epoch')
 ax.set_ylabel('RMSE')
 ax.grid()
-ax.set_title('Test Root Mean Square Error vs Epoch - COVID')
-fig.savefig('./valid_rmse_covid.png')
+ax.set_title('Test Root Mean Square Error vs Epoch - Obesity')
+fig.savefig('./plots/valid_rmse_obesity.png')
