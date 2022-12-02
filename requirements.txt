@@ -1,0 +1,9 @@
+dash==2.2.0
+dash-daq==0.5.0
+pandas==1.4.1
+scikit-learn==1.0
+scipy==1.7.1
+statsmodels==0.13.2
+pytorch_tabnet
+torch
+matplotlib
